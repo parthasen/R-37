@@ -11,7 +11,7 @@ get_seq_by_genomic_coord <- function(genome, chr, start, end) {
 }
 
 get_genes_go_terms <- function(genes) {
-	# genes is a vector of genes
+	# genes is a vector of Ensembl gene names
 	library(biomaRt)
 	# define biomaRt data base
 	mart <- useMart(biomart = "ensembl", dataset = "hsapiens_gene_ensembl")
