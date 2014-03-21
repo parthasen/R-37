@@ -1,5 +1,6 @@
+# a function that returns genomic sequence by given chromosome and its start and end coordinates
 get_seq_by_genomic_coord <- function(genome, chr, start, end) {
-	# import the genome library (has to be from bioconductor)
+	# genome is a genome library (has to be from bioconductor)
 	# e.g. for human: "BSgenome.Hsapiens.UCSC.hg19"
 	do.call(library, list(genome))
 	# get the sequence
@@ -10,6 +11,7 @@ get_seq_by_genomic_coord <- function(genome, chr, start, end) {
 	return(toString(seq))
 }
 
+# a function that returns all GO terms (with a short description) of a given set of genes
 get_genes_go_terms <- function(genes) {
 	# genes is a vector of Ensembl gene names
 	library(biomaRt)
