@@ -23,3 +23,12 @@ get_genes_go_terms <- function(genes) {
 	    values = list(genes, TRUE), mart = mart)
 	return(res)
 }
+
+# a function that returns all GO terms (with a short description) of all genes
+get_all_genes_go_terms <- function() {
+	library(biomaRt)
+	# define biomaRt data base
+	mart <- useMart(biomart = "ensembl", dataset = "hsapiens_gene_ensembl")
+	gene.data <- getBM(attributes=c('ensembl_gene_id', 'go_id', "name_1006"),
+	    mart = mart)
+}
